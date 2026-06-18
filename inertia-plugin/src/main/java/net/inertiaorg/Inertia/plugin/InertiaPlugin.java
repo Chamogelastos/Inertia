@@ -1,4 +1,4 @@
-package org.inertia.Inertia.plugin;
+package net.inertiaorg.Inertia.plugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
