@@ -1,4 +1,5 @@
 plugins {
+    id("java")
     id("xyz.jpenilla.run-paper") version "3.0.2"
 }
 
@@ -12,4 +13,25 @@ dependencies {
     implementation(project(":inertia-testkit"))
 
     compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+}
+tasks {
+    processResources {
+        val props = mapOf("version" to project.version, "description" to project.description)
+        inputs.properties(props)
+        filteringCharset = "UTF-8"
+
+        filesMatching("plugin.yml") {
+            expand(props)
+        }
+    }
+
+    runServer {
+        downloadPlugins {
+
+        }
+
+        minecraftVersion("26.1.2")
+    }
+    // runFolia
+    runPaper.folia.registerTask()
 }
