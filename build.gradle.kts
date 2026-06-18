@@ -1,7 +1,7 @@
 allprojects {
     apply(plugin = "java")
 
-    group = ""
+    group = "me.zamin"
     version = "1.0.0"
 
     repositories {
